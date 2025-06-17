@@ -1,23 +1,10 @@
 const { Router } = require("express");
-
 const indexRouter = Router();
+const { getHome, getAbout, getContact } = require("../controllers/indexController");
 
 
-indexRouter.get("/about", (req, res) => {
-    res.send("About");
-})
-
-indexRouter.get("/contact", (req, res) => {
-    res.send("Contact");
-})
-
-indexRouter.get("/", (req, res) => {
-    res.send("Home");
-})
+indexRouter.get("/about", getAbout);
+indexRouter.get("/contact", getContact);
+indexRouter.get("/", getHome);
 
 module.exports = indexRouter;
-
-/*GET /
-GET /about
-GET /contact
-POST /contact */
