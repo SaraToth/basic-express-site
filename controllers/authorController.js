@@ -15,7 +15,11 @@ async function getAuthorById(req, res) {
 
 async function getAuthors(req, res) {
     const authors = await db.getAuthors();
-    console.log(authors);
+
+    if (!authors) {
+        res.status(404).send("No authors available");
+        return;
+    }
     res.send(authors);
 }
 
