@@ -6,6 +6,12 @@ const authors = [
 
 async function getAuthorById(authorId) {
     return authors.find(author => author.id === authorId);
+}; 
+
+async function getAuthors() {
+    const authorList = [];
+    authors.forEach(author => authorList.push(author.name));
+    return authorList.join(", ");
 };
 
-module.exports = { getAuthorById };
+module.exports = { getAuthorById, getAuthors };
