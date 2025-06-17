@@ -1,22 +1,13 @@
 const { Router } = require("express");
-const authorRouter = require("./authorRouter");
 const bookRouter = Router();
+const { getBooks, getBookById, getBookReservation } = require("../controllers/bookController");
 
-bookRouter.get("/:bookId/reserve", (req, res) => {
-    const { bookId } = req.params;
-    res.send(`BookId: ${bookId} reservation info`);
-    res.send("Get book reservation info");
-});
+bookRouter.get("/:bookId/reserve", getBookReservation);
 
-bookRouter.get("/:bookId", (req, res) => {
-    const { bookId } = req.params;
-    res.send(`BookId: ${bookId} info`);
-});
+bookRouter.get("/:bookId", getBookById);
 
 // Where / = /books/
-bookRouter.get("/", (req, res) => {
-    res.send("all books");
-});
+bookRouter.get("/", getBooks);
 
 module.exports = bookRouter;
 

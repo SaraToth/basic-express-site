@@ -10,6 +10,15 @@ async function getBooks(req, res) {
     res.send(books);
 };
 
+async function getBookReservation(req, res) {
+    const { bookId } = req.params;
+    const book = await db.getBookById(Number(bookId));
+    if (!book) {
+        res.status(404).send("Book not found");
+    }
+    res.send(`Would you like to reserve ${book.title}?`);
+};
+
 async function getBookById(req, res) {
     const { bookId } = req.params;
 
@@ -22,4 +31,4 @@ async function getBookById(req, res) {
     res.send(`Book title: ${book.title}`);
 };
 
-module.exports = { getBookById, getBooks };
+module.exports = { getBookById, getBooks, getBookReservation };
