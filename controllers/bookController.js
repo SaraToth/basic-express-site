@@ -1,6 +1,7 @@
 const db = require("../db");
+const asyncHandler = require("express-async-handler");
 
-async function getBooks(req, res) {
+const getBooks = asyncHandler(async (req, res) => {
     const books = await db.getBooks();
 
     if (!books) {
@@ -8,18 +9,18 @@ async function getBooks(req, res) {
     };
 
     res.send(books);
-};
+});
 
-async function getBookReservation(req, res) {
+const getBookReservation = (async (req, res) => {
     const { bookId } = req.params;
     const book = await db.getBookById(Number(bookId));
     if (!book) {
         res.status(404).send("Book not found");
     }
     res.send(`Would you like to reserve ${book.title}?`);
-};
+});
 
-async function getBookById(req, res) {
+const getBookById = asyncHandler(async (req, res) => {
     const { bookId } = req.params;
 
     const book = await db.getBookById(Number(bookId));
@@ -29,6 +30,6 @@ async function getBookById(req, res) {
     }
 
     res.send(`Book title: ${book.title}`);
-};
+});
 
 module.exports = { getBookById, getBooks, getBookReservation };
