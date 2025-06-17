@@ -1,9 +1,14 @@
 <html>
     <head>
         <title><%= book.title%></title>
+        <link rel="stylesheet" href="/styles.css">
     </head>
     <body>
-        <h1><%= book.title%></h1>
-        <%- include("partials/footer") %>
+        <div class="wrapper">
+            <main>
+                <h1><%= book.title%></h1>
+            </main>
+            <%- include("partials/footer") %>
+        </div>
     </body>
 </html>

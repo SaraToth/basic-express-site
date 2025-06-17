@@ -1,15 +1,19 @@
 <html>
     <head>
         <title>Authors</title>
+        <link rel="stylesheet" href="/styles.css">
     </head>
     <body>
-        <h1>Authors</h1>
-        <ul>
-            <% for (let i = 0; i < authors.length; i++) { %>
-                <li><%= authors[i].name %></li>
-            <%}%>
-        </ul>
-
-        <%- include("partials/footer") %>
+        <div class="wrapper">
+            <main>
+                <h1>Authors</h1>
+                <ul>
+                    <% for (let i = 0; i < authors.length; i++) { %>
+                        <li><%= authors[i].name %></li>
+                    <%}%>
+                </ul>
+            </main>
+            <%- include("partials/footer") %>
+        </div>
     </body>
 </html>
