@@ -11,7 +11,7 @@ const getBooks = asyncHandler(async (req, res) => {
     res.send(books);
 });
 
-const getBookReservation = (async (req, res) => {
+const getBookReservation = asyncHandler(async (req, res) => {
     const { bookId } = req.params;
     const book = await db.getBookById(Number(bookId));
     if (!book) {
