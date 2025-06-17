@@ -4,7 +4,6 @@ const authorRouter = Router();
 
 // Where / = /authors/
 authorRouter.get("/", getAuthors);
-
 authorRouter.get("/:authorId", getAuthorById);
 
 module.exports = authorRouter;
