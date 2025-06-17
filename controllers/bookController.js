@@ -29,8 +29,8 @@ const getBookById = asyncHandler(async (req, res) => {
     if (!book) {
         throw new CustomNotFoundError("Book not found");
     }
-
-    res.send(`Book title: ${book.title}`);
+    
+    res.render("book", { book: book});
 });
 
 module.exports = { getBookById, getBooks, getBookReservation };

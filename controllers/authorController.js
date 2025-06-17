@@ -8,7 +8,8 @@ const getAuthorById = asyncHandler(async (req, res) => {
     if (!author) {
         throw new CustomNotFoundError("Author not found");
     }
-    res.send(`Author Name: ${author.name}`);
+    // res.send(`Author Name: ${author.name}`);
+    res.render("author", { author: author});
 
 });
 
