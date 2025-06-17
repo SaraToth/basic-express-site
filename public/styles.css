@@ -12,10 +12,11 @@ html, body {
 
 main {
     flex: 1;
+    margin-left: 60px;
 }
 
 h1 {
-    margin: 20px 60px;
+    margin-top: 20px;
 }
 
 footer {
