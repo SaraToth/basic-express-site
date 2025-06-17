@@ -1,0 +1,25 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+h1 {
+    margin: 20px 60px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
