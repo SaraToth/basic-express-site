@@ -19,15 +19,11 @@ async function getBookById(bookId) {
 };
 
 async function getAuthors() {
-    const authorList = [];
-    authors.forEach(author => authorList.push(author.name));
-    return authorList.join(", ");
+    return authors;
 };
 
 async function getBooks() {
-    const bookList = [];
-    books.forEach(book => bookList.push(book.title));
-    return bookList.join(", ");
+    return books;
 };
 
 module.exports = { getAuthorById, getAuthors, getBooks, getBookById };
