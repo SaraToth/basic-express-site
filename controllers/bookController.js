@@ -18,7 +18,7 @@ const getBookReservation = asyncHandler(async (req, res) => {
     if (!book) {
         throw new CustomNotFoundError("Book not found");
     }
-    res.send(`Would you like to reserve ${book.title}?`);
+    res.render("reserve", { book: book});
 });
 
 const getBookById = asyncHandler(async (req, res) => {
@@ -29,7 +29,7 @@ const getBookById = asyncHandler(async (req, res) => {
     if (!book) {
         throw new CustomNotFoundError("Book not found");
     }
-    
+
     res.render("book", { book: book});
 });
 
