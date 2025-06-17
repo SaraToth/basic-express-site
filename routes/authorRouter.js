@@ -7,7 +7,8 @@ authorRouter.get("/", (req, res) => {
 });
 
 authorRouter.get("/:authorId", (req, res) => {
-    res.send("author info");
+    const { authorId } = req.params;
+    res.send(`Author ${authorId} info`);
 });
 
 module.exports = authorRouter;
