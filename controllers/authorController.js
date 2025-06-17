@@ -18,7 +18,7 @@ const getAuthors = asyncHandler(async (req, res) => {
     if (!authors) {
         throw new CustomNotFoundError("No Authors available");
     }
-    res.send(authors);
+    res.render("authorsList", { authors: authors});
 });
 
 module.exports = { getAuthorById, getAuthors };

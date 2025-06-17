@@ -9,7 +9,7 @@ const getBooks = asyncHandler(async (req, res) => {
         throw new CustomNotFoundError("No books are available");
     };
 
-    res.send(books);
+    res.render("booksList", { books: books});
 });
 
 const getBookReservation = asyncHandler(async (req, res) => {
